@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/denispeplin/jekyll_editor.svg?branch=master)](https://travis-ci.org/denispeplin/jekyll_editor)
+
 # JekyllEditor
 
 **TODO: Add description**
@@ -17,4 +19,3 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
         def application do
           [applications: [:jekyll_editor]]
         end
-
