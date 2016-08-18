@@ -7,6 +7,26 @@ defmodule JekyllEditor do
   Calls JekyllEditor.Index
   """
   def index(path) do
-    JekyllEditor.Index.call(path)
+    path
+    |> posts_path
+    |> JekyllEditor.Index.call
+  end
+
+  @doc """
+  Calls JekyllEditor.Show
+  """
+  def show(path, filename) do
+    path
+    |> posts_path
+    |> file_fullpath(filename)
+    |> JekyllEditor.Show.call
+  end
+
+  defp posts_path(source_path) do
+    Path.join source_path, "_posts"
+  end
+
+  def file_fullpath(path, filename) do
+    Path.join path, filename
   end
 end
