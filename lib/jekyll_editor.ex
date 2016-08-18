@@ -6,7 +6,7 @@ defmodule JekyllEditor do
   @doc """
   Calls JekyllEditor.Index
   """
-  def index(path) do
+  def index(path) when is_binary(path) do
     path
     |> posts_path
     |> JekyllEditor.Index.call
@@ -15,7 +15,7 @@ defmodule JekyllEditor do
   @doc """
   Calls JekyllEditor.Show
   """
-  def show(path, filename) do
+  def show(path, filename) when is_binary(path) and is_binary(filename) do
     path
     |> posts_path
     |> file_fullpath(filename)
